@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<ol>
+{% for book in books %}
+    <li>
+    {{ book.title }}<br>
+    {{ book.author }}<br>
+    {{ book.body }}<br>
+    {{ book.year }}<br>
+    {{ book.in_stock }}<br>
+    <p style="color:brown;">____________________</p>
+    <p style="color:brown;">____________________</p>
+    </li>
+{% endfor %}
+</ol>
+{% endblock %}
