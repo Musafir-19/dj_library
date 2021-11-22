@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-{% for result in object_list %}
+{% for result in datadict %}
     {{ result.title }}<br>
     {{ result.author }}<br>
 {% endfor %}

@@ -5,8 +5,8 @@ from search.forms import SearchBook
 
 
 def search_page(request):
-    if request.method == 'GET':
-        form = SearchBook(request.GET)
+    if request.method == 'POST':
+        form = SearchBook(request.POST)
         if form.is_valid():
             data = form.cleaned_data.get("search_field")
             res = requests.get(
@@ -17,6 +17,7 @@ def search_page(request):
                 date = value["volumeInfo"]["publishedDate"]
                 datadict = {'title': book_title, 'author': book_author,
                             'date': date}
+                print(datadict)
             return render(request, 'search/results.html', datadict)
     else:
         form = SearchBook()
