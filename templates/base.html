@@ -9,10 +9,10 @@
 </head>
 
 <body>
-    <h1>Поиск2</h1>
-    <form action="" method="POST">
+    <h3>Поиск</h3>
+    <form action="{% url 'search' %}" method="POST">
         {% csrf_token %}
-        {{ form.as_p }}
+        <input type="text" name="search_field">
         <input type="submit" value="submit">
     </form>
     {% block content %}
