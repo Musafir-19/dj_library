@@ -9,12 +9,20 @@
 </head>
 
 <body>
+    <h2><a href="{% url 'home' %}">На главную</a></h2><br>
     <h3>Поиск</h3>
     <form action="{% url 'search' %}" method="POST">
         {% csrf_token %}
         <input type="text" name="search_field">
         <input type="submit" value="submit">
     </form>
+    -----------<br>
+    {% if user.is_authenticated %}
+        <span> Здравствуйте,{{ user.username }}! </span><br>
+        <a href="{% url 'logout' %}">SignUp</a>
+    {% else %}
+        <a href="{% url 'login' %}">Sign In</a>
+    {% endif %}
     {% block content %}
     {% endblock %}
 </body>

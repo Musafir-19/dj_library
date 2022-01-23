@@ -2,9 +2,12 @@
 {% block content %}
 {% for result in datadict %}
     {{ result.title }}<br>
+    ----------<br>
     {{ result.author }}<br>
+    ----------<br>
     {{ result.date }}<br>
-{% endfor %}
-<p style="color:brown;">____________________</p>
-<p style="color:brown;">____________________</p>  
+    <a href="{{ result.url }}">Подробная информация</a>
+    <p style="color:brown;">____________________</p>
+    <p style="color:brown;">____________________</p>
+{% endfor %}   
 {% endblock %}
