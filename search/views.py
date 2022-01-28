@@ -22,5 +22,4 @@ def search_page(request):
             datadict = {'title': book_title, 'author': book_author,
                         'date': date, 'url': url}
             books.append(datadict)
-            print(books)
     return render(request, 'search/results.html', {'datadict': books})
